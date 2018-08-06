@@ -12,5 +12,19 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+  return $router->app->version();
+});
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+
+  $router->get('services',  ['uses' => 'ServiceController@showAllServices']);
+
+  $router->get('services/{id}', ['uses' => 'ServiceController@showOneService']);
+
+  $router->post('services', ['uses' => 'ServiceController@create']);
+
+  $router->delete('services/{id}', ['uses' => 'ServiceController@delete']);
+
+  $router->put('services/{id}', ['uses' => 'ServiceController@update']);
+
 });
