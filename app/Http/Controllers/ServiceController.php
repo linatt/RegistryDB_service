@@ -13,9 +13,9 @@ class ServiceController extends Controller
         return response()->json(Service::all());
     }
 
-    public function showOneService($id)
+    public function showOneService($Service_Id)
     {
-        return response()->json(Service::find($id));
+        return response()->json(Service::find($Service_Id));
     }
 
     public function create(Request $request)
@@ -25,17 +25,17 @@ class ServiceController extends Controller
         return response()->json($service, 201);
     }
 
-    public function update($id, Request $request)
+    public function update($Service_Id, Request $request)
     {
-        $service = Service::findOrFail($id);
+        $service = Service::findOrFail($Service_Id);
         $service->update($request->all());
 
-        return response()->json($service, 200);
+        return response()->json($service->Service_Active, 200);
     }
 
-    public function delete($id)
+    public function delete($Service_Id)
     {
-        Service::findOrFail($id)->delete();
+        Service::findOrFail($Service_Id)->delete();
         return response('Deleted Successfully', 200);
     }
 }
