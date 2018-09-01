@@ -13,9 +13,14 @@ class ServiceController extends Controller
         return response()->json(Service::all());
     }
 
-    public function showOneService($Service_Id)
+    public function showOneService($Service_Name)
     {
-        return response()->json(Service::find($Service_Id));
+
+      $service = Service::where('Service_Name', '=' , $Service_Name)->firstOrFail();
+
+      $serviceLocation = $service->Service_Location;
+
+        return $serviceLocation;
     }
 
     public function create(Request $request)
