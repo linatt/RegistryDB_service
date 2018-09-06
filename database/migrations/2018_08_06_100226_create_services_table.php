@@ -19,7 +19,6 @@ class CreateServicesTable extends Migration
             $table->integer('Service_Id');
             $table->string('Service_Name');
             $table->string('Service_Location');
-            $table->boolean('Service_Active');
         });
     }
 

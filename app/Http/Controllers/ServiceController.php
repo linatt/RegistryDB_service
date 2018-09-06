@@ -30,9 +30,9 @@ class ServiceController extends Controller
         return response()->json($service, 201);
     }
 
-    public function update($Service_Id, Request $request)
+    public function update($Service_Name, Request $request)
     {
-        $service = Service::findOrFail($Service_Id);
+        $service = Service::where('Service_Name', '=' , $Service_Name)->firstOrFail();
         $service->update($request->all());
 
         return response()->json($service->Service_Active, 200);

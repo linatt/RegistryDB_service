@@ -25,6 +25,6 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
   $router->delete('services/{$Service_Id}', ['uses' => 'ServiceController@delete']);
 
-  $router->put('services/{Service_Id}', ['uses' => 'ServiceController@update']);
+  $router->put('services/{Service_Name}', ['uses' => 'ServiceController@update']);
 
 });

@@ -20,8 +20,7 @@ class ServicesTableSeeder extends Seeder
       'Service_Name' => 'A-Service',
       'created_at' => $now,
       'updated_at' => $now,
-      'Service_Location' => 'a-service.homestead',
-      'Service_Active' => false,
+      'Service_Location' => 'a-service.homestead'
     ]
   );
 
@@ -30,8 +29,7 @@ class ServicesTableSeeder extends Seeder
       'Service_Name' => 'B-Service',
       'created_at' => $now,
       'updated_at' => $now,
-      'Service_Location' => 'b-service.homestead',
-      'Service_Active' => false,
+      'Service_Location' => 'b-service.homestead'
     ]
 );
 
